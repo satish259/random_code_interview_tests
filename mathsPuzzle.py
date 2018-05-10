@@ -2,13 +2,16 @@ import unittest
 
 def mathsPuzzle(lenDigit):
     rList=[]
-    maxDigit=10**lenDigit
-    for x in range(maxDigit):
-        for y in list(str(x)):
-            if list(str(x)).count(str(y))!=y:
-                break
-            elif y==lenDigit-1:
-                rList.append(x)
+    if lenDigit <=10:
+        maxDigit=10**lenDigit
+        for x in range(maxDigit):
+            for y in list(str(x)):
+                if list(str(x)).count(str(y))!=y:
+                    break
+                elif y==lenDigit-1:
+                    rList.append(x)
+    else:
+        print('mathsPuzzle is unable to deal with anothing greater than base 10')
     return rList
 
 class TestmathsPuzzle(unittest.TestCase):
